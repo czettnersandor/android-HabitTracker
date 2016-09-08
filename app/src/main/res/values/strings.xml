@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HabitTracker</string>
+    <string name="insert_dummy_data">Insert Dummy Data</string>
+    <string name="delete_all">Delete all</string>
+    <string name="set_lengths_to_1_on_all">Set lengths to 1 on all</string>
+</resources>
