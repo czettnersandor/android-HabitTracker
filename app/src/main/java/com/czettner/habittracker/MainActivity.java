@@ -95,11 +95,7 @@ public class MainActivity extends AppCompatActivity {
         db.update(HabitEntry.TABLE_NAME, v, null, null);
     }
 
-    /**
-     * Display database info
-     */
-    private void displayDatabaseInfo() {
-
+    private Cursor read() {
         // Create and/or open a database to read from it
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
@@ -118,6 +114,15 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null
         );
+        return cursor;
+    }
+
+    /**
+     * Display database info
+     */
+    private void displayDatabaseInfo() {
+
+        Cursor cursor = read();
         try {
             // Display the number of rows in the Cursor (which reflects the number of rows in the
             // pets table in the database).

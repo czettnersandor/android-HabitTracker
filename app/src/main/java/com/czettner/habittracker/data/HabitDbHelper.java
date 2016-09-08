@@ -13,9 +13,11 @@ public class HabitDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "habit.db";
     private static final int DATABASE_VERSION = 1;
+    private Context mContext;
 
     public HabitDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.mContext = context;
     }
 
     @Override
@@ -33,5 +35,9 @@ public class HabitDbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // The database is still at version 1, so there's nothing to do be done here.
+    }
+
+    public void deleteDatabase() {
+        mContext.deleteDatabase(DATABASE_NAME);
     }
 }
